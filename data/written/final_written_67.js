@@ -215,7 +215,7 @@ window.LOAD_QUIZ({
         },
         {
             qNum: 29, part: 'B', type: 'select', score: 1,
-            text: '【U4L3 | Cambridge:词汇认读】选出正确单词：doctor',
+            text: '【U4L3 | Cambridge:词汇认读】选出正确单词：医生',
             options: ['A. doctor', 'B. teacher', 'C. farmer', 'D. nurse'],
             correct: 'A. doctor'
         },
