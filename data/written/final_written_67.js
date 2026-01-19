@@ -209,7 +209,7 @@ window.LOAD_QUIZ({
         },
         {
             qNum: 28, part: 'B', type: 'select', score: 1,
-            text: '【U3L3 | Cambridge:词汇认读】选出正确单词：pencil box',
+            text: '【U3L3 | Cambridge:词汇认读】选出正确单词：铅笔盒',
             options: ['A. pencil', 'B. pencil box', 'C. ruler', 'D. book'],
             correct: 'B. pencil box'
         },
@@ -221,7 +221,7 @@ window.LOAD_QUIZ({
         },
         {
             qNum: 30, part: 'B', type: 'select', score: 1,
-            text: '【U1L1 | Cambridge:词汇认读】选出正确单词：boy',
+            text: '【U1L1 | Cambridge:词汇认读】选出正确单词：男孩',
             options: ['A. boy', 'B. girl', 'C. mom', 'D. dad'],
             correct: 'A. boy'
         },
@@ -233,13 +233,13 @@ window.LOAD_QUIZ({
         },
         {
             qNum: 32, part: 'B', type: 'select', score: 1,
-            text: '【U3L2 | Cambridge:拼写辨认】y e l l o w → ?',
+            text: '【U3L2 | Cambridge:拼写辨认】选出正确单词：黄色',
             options: ['A. yellow', 'B. yelow', 'C. yello', 'D. yellw'],
             correct: 'A. yellow'
         },
         {
             qNum: 33, part: 'B', type: 'select', score: 1,
-            text: '【U1L3 | Cambridge:拼写辨认】f i s h → ?',
+            text: '【U1L3 | Cambridge:拼写辨认】选出正确单词：鱼',
             options: ['A. fish', 'B. wish', 'C. dish', 'D. fash'],
             correct: 'A. fish'
         },
