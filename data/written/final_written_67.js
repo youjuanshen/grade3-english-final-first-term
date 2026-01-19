@@ -162,31 +162,36 @@ window.LOAD_QUIZ({
         // ==================================
         {
             qNum: 21, part: 'B', type: 'select', score: 2,
-            text: '【U3L3 | Cambridge:理解简单句子】句子对吗？This is a red schoolbag.',
+            text: '【U3L3 | Cambridge:理解简单句子】看图判断：It is red.',
+            imageUri: 'u3_red.png',
             options: ['A. Yes (对)', 'B. No (错)'],
             correct: 'A. Yes (对)'
         },
         {
             qNum: 22, part: 'B', type: 'select', score: 2,
-            text: '【U2L2 | Cambridge:理解简单句子】句子对吗？There are six ducks. (图片5只鸭子)',
+            text: '【U2L2 | Cambridge:理解简单句子】看图判断：There are six ducks.',
+            imageUri: 'u2_pond_ducks.png',
             options: ['A. Yes (对)', 'B. No (错)'],
             correct: 'B. No (错)'
         },
         {
             qNum: 23, part: 'B', type: 'select', score: 2,
-            text: '【U3L3 | Cambridge:理解简短图片故事】看图并判断：Sally has a red schoolbag. The schoolbag is red. (图片：红色书包)',
+            text: '【U4L1 | Cambridge:理解简单句子】看图判断：This is my father.',
+            imageUri: 'u4_father.png',
             options: ['A. Yes (对)', 'B. No (错)'],
             correct: 'A. Yes (对)'
         },
         {
             qNum: 24, part: 'B', type: 'select', score: 2,
-            text: '【U4L1 | Cambridge:理解简单句子】句子对吗？This is my mother.',
+            text: '【U4L1 | Cambridge:理解简单句子】看图判断：This is my mother.',
+            imageUri: 'u4_mother.png',
             options: ['A. Yes (对)', 'B. No (错)'],
             correct: 'A. Yes (对)'
         },
         {
             qNum: 25, part: 'B', type: 'select', score: 1,
-            text: '【U3L2 | Cambridge:理解简单句子】句子对吗？It is blue. (图片黄色星星)',
+            text: '【U3L2 | Cambridge:理解简单句子】看图判断：It is blue.',
+            imageUri: 'u3_yellow.png',
             options: ['A. Yes (对)', 'B. No (错)'],
             correct: 'B. No (错)'
         },
