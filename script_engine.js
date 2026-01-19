@@ -2,13 +2,11 @@
 // ⚠️ 请确认这里是您最新的、可用的 Google Script 链接
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyR1D1HVmrmW7PHuIP-iYgSTcNFVHWBfoXpYIotWWQkXrIYVK8tc6YhzQEoGVDnxpI/exec";
 
-// ✅ 口语评分按钮旁边的文字描述
+// ✅ 口语评分按钮旁边的文字描述 (3分制)
 const SPEAKING_RUBRIC = [
-    "[1分] 无法作答",
-    "[2分] 表达困难，依赖提示",
-    "[3分] 需提示才能完成",
-    "[4分] 基本清晰，偶有提示",
-    "[5分] 流畅自然，无需提示"
+    "[1分] 基本无法作答",
+    "[2分] 能作答但不够流畅",
+    "[3分] 表达清晰较完整"
 ];
 
 let currentData = null;
@@ -143,7 +141,8 @@ function renderQuestion() {
         // ✅✅✅ 这里是口语部分：已彻底删除“参考” ✅✅✅
 
         html += `<div class="score-row">`;
-        [5, 4, 3, 2, 1].forEach(score => { 
+        const maxSpeakScore = q.score || 3;
+        for (let score = maxSpeakScore; score >= 1; score -= 1) {
               const active = answers['Q'+q.qNum] === score ? 'active' : '';
               const description = (typeof SPEAKING_RUBRIC !== 'undefined') ? SPEAKING_RUBRIC[score - 1] : "";
               
@@ -155,7 +154,7 @@ function renderQuestion() {
                       <span class="score-desc">${description}</span>
                   </div>
               `;
-        });
+        }
         html += `</div>`;
     }
     document.getElementById('qContent').innerHTML = html;
@@ -267,10 +266,18 @@ function submit() {
     let scoreL=0, scoreR=0, scoreW=0;
 
     // 2. 算分逻辑 (保持不变)
+    let maxScore = 0;
     if (currentMode === 'speaking') {
-        Object.values(answers).forEach(v => totalScore += parseInt(v)||0);
+        currentData.questions.forEach(q => {
+            const qMax = q.score || 3;
+            maxScore += qMax;
+            totalScore += parseInt(answers['Q' + q.qNum]) || 0;
+        });
     } else {
         currentData.questions.forEach(q => {
+            const qMax = q.score || 1;
+            maxScore += qMax;
+
             const userAns = answers['Q' + q.qNum];
             let isCorrect = false;
             // drag-sort 逻辑 (忽略标点对比)
@@ -282,15 +289,13 @@ function submit() {
             }
             
             if (isCorrect) {
-                totalScore += 5;
-                if (q.part === 'A') scoreL += 5;
-                else if (q.part === 'B') scoreR += 5;
-                else if (q.part === 'C') scoreW += 5;
+                totalScore += qMax;
+                if (q.part === 'A') scoreL += qMax;
+                else if (q.part === 'B') scoreR += qMax;
+                else if (q.part === 'C') scoreW += qMax;
             }
         });
     }
-
-    let maxScore = currentData.questions.length * 5;
     let percentNum = Math.round((totalScore / maxScore) * 100);
     
     let feedback = "";
