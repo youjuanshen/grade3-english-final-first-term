@@ -4,9 +4,9 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyR1D1HVmrmW7
 
 // ✅ 口语评分按钮旁边的文字描述 (3分制)
 const SPEAKING_RUBRIC = [
-    "[1分] 基本无法作答",
-    "[2分] 能作答但不够流畅",
-    "[3分] 表达清晰较完整"
+    "[1分] 只能说出零散词或明显不对应问题，需较多提示",
+    "[2分] 能作答但信息不完整或不够连贯，需少量提示",
+    "[3分] 表达清楚、信息完整、发音基本准确、几乎无需提示"
 ];
 
 let currentData = null;
