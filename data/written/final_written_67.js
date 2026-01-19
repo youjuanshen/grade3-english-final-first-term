@@ -251,7 +251,7 @@ window.LOAD_QUIZ({
         },
         {
             qNum: 35, part: 'B', type: 'select', score: 1,
-            text: '【U4L1 | Cambridge:拼写辨认】m o t h e r → ?',
+            text: '【U4L1 | Cambridge:拼写辨认】r e t o h m → ?',
             options: ['A. mother', 'B. mather', 'C. mothor', 'D. mathor'],
             correct: 'A. mother'
         },
@@ -312,8 +312,8 @@ window.LOAD_QUIZ({
         {
             qNum: 45, part: 'C', type: 'drag-sort', score: 1,
             text: '【U1L2 | Cambridge:书写姓名】拖动字母，拼出名字。',
-            words: ['A', 'm', 'y'],
-            correct: 'A m y'
+            words: ['S', 'a', 'l', 'l', 'y'],
+            correct: 'S a l l y'
         }
     ]
 });
