@@ -112,7 +112,8 @@ function renderQuestion() {
                     displayContent = `<img src="${imgSrc}" class="opt-img" style="height:60px; vertical-align:middle">`; 
                 }
                 const isSelected = answers['Q'+q.qNum] === val ? 'selected' : '';
-                html += `<div class="option-item ${isSelected}" onclick="choose('${q.qNum}', '${val}')">${displayContent}</div>`;
+                const safeVal = encodeURIComponent(val);
+                html += `<div class="option-item ${isSelected}" data-qid="${q.qNum}" data-value="${safeVal}" onclick="chooseValue(this)">${displayContent}</div>`;
             });
             html += `</div>`;
         } else if (q.type === 'drag-sort') {
@@ -170,6 +171,12 @@ function enableNavButtons(enable) {
     const total = currentData.questions.length;
     const targetBtn = (currentQIndex === total - 1) ? document.getElementById('btnSubmit') : document.getElementById('btnNext');
     if(targetBtn) targetBtn.disabled = !enable;
+}
+
+function chooseValue(el) {
+    const qid = el.dataset.qid;
+    const val = decodeURIComponent(el.dataset.value || '');
+    choose(qid, val);
 }
 
 function choose(qid, val) { 
