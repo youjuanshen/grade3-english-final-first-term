@@ -246,8 +246,8 @@ window.LOAD_QUIZ({
         {
             qNum: 34, part: 'B', type: 'select', score: 1,
             text: '【U1L2 | Cambridge:识别姓名拼写】选出正确的名字拼写。',
-            options: ['A. Amy', 'B. Amm', 'C. Ammy', 'D. Aamy'],
-            correct: 'A. Amy'
+            options: ['A. Sally', 'B. Salley', 'C. Saly', 'D. Sallye'],
+            correct: 'A. Sally'
         },
         {
             qNum: 35, part: 'B', type: 'select', score: 1,
